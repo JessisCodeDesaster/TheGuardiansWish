@@ -11,7 +11,7 @@ public class characterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 5f;
+        moveSpeed = 7.5f;
         body = GetComponent<Rigidbody>();
     }
 
