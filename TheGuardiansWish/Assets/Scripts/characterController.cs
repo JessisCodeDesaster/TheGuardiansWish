@@ -37,4 +37,10 @@ public class characterController : MonoBehaviour
             playerOnGround = true;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //hier die türen regeln sollte klappen!
+        //Debug.Log(other);
+    }
 }

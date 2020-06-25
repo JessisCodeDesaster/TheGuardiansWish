@@ -59,5 +59,4 @@ public class roomSpawn : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

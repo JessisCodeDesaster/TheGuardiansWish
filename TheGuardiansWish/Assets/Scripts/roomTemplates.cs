@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class roomTemplates : MonoBehaviour
 
     public float waitTime;
     public GameObject boss;
-    public GameObject  monster;
+    public GameObject monster;
 
     public int rand;
     public int x;
@@ -27,17 +28,18 @@ public class roomTemplates : MonoBehaviour
     void Start()
     {
         spawned = false;
-        waitTime = 1;
+        waitTime = 1.5f;
         roomCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(waitTime <= 0 && spawned == false)
+        if (waitTime <= 0 && spawned == false)
         {
             spawnEnemies();
-        } else
+        }
+        else
         {
             waitTime -= Time.deltaTime;
         }
@@ -45,7 +47,7 @@ public class roomTemplates : MonoBehaviour
 
     void spawnEnemies()
     {
-        for (int i = 0; i < rooms.Count-1; i++)
+        for (int i = 0; i < rooms.Count - 1; i++)
         {
             rand = Random.Range(1, 5);
             roomCount++;
@@ -56,11 +58,13 @@ public class roomTemplates : MonoBehaviour
                 position = new Vector3(x, 1.5f, z);
                 Instantiate(monster, rooms[i].transform.position + position, Quaternion.identity);
             }
+            Debug.Log(roomCount);
         }
-        if (roomCount+1 == rooms.Count)
+        if (roomCount +1 == rooms.Count)
         {
-            position = new Vector3(0, 1.5f, 0);
+            position = new Vector3(2, 1.5f, 0);
             Instantiate(boss, rooms[roomCount].transform.position + position, Quaternion.identity);
+            Debug.Log("Boss");
         }
         spawned = true;
     }

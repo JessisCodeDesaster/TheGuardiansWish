@@ -382,6 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35517100504338839}
   - component: {fileID: -4528297710602021665}
+  - component: {fileID: -5380493090811188728}
   m_Layer: 0
   m_Name: W-L
   m_TagString: Untagged
@@ -423,6 +424,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee64dbacd366cf44eba9142761899a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-5380493090811188728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35517100504338840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 1, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &35517100683436790
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +544,7 @@ GameObject:
   - component: {fileID: 35517100790340227}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

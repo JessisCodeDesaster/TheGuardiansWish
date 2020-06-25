@@ -1469,7 +1469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533910558
 GameObject:
@@ -1693,6 +1693,9 @@ MonoBehaviour:
   boss: {fileID: 6912868147421122774, guid: e1ab4e0cccec3a44d9ecd0e55a61bd90, type: 3}
   monster: {fileID: 5347229313117199435, guid: 986d56d4d81f01c4da19f89e1175d63f, type: 3}
   rand: 0
+  x: 0
+  z: 0
+  position: {x: 0, y: 0, z: 0}
   spawned: 0
 --- !u!4 &1679446534
 Transform:
@@ -1943,12 +1946,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861157036}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -249, y: -90, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1967061113}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1921664293
 GameObject:
@@ -2038,7 +2041,7 @@ GameObject:
   - component: {fileID: 1967061111}
   - component: {fileID: 1967061110}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2117,8 +2120,9 @@ RectTransform:
   m_Children:
   - {fileID: 2117792388}
   - {fileID: 408437287}
+  - {fileID: 1861157039}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2305,7 +2309,7 @@ GameObject:
   - component: {fileID: 2117792390}
   - component: {fileID: 2117792389}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2325,9 +2329,9 @@ RectTransform:
   m_Father: {fileID: 1967061113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 212, y: -94.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -58, y: 57.5}
   m_SizeDelta: {x: 105, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2117792389
