@@ -1691,7 +1691,7 @@ MonoBehaviour:
   rooms: []
   waitTime: 5
   boss: {fileID: 6912868147421122774, guid: e1ab4e0cccec3a44d9ecd0e55a61bd90, type: 3}
-  monster: {fileID: 5347229313117199435, guid: 986d56d4d81f01c4da19f89e1175d63f, type: 3}
+  monster: {fileID: 5485532730542382627, guid: 8cd4beeeec090c144a110d4b3418d1f5, type: 3}
   rand: 0
   x: 0
   z: 0

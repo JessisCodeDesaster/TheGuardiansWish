@@ -7,6 +7,8 @@ public class characterController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody body;
     public bool playerOnGround = true;
+   // private Collider room;
+   // private Vector3 positionRoom;
 
     // Start is called before the first frame update
     void Start()
@@ -42,5 +44,7 @@ public class characterController : MonoBehaviour
     {
         //hier die türen regeln sollte klappen!
         //Debug.Log(other);
+        //room = other;
+        //positionRoom = other.transform.position;
     }
 }
