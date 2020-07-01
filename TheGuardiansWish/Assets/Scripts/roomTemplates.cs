@@ -62,7 +62,7 @@ public class roomTemplates : MonoBehaviour
         }
         if (roomCount +1 == rooms.Count)
         {
-            position = new Vector3(2, 1.5f, 0);
+            position = new Vector3(2, 0, 0);
             Instantiate(boss, rooms[roomCount].transform.position + position, Quaternion.identity);
             Debug.Log("Boss");
         }
