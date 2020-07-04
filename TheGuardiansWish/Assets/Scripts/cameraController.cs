@@ -35,4 +35,9 @@ public class cameraController : MonoBehaviour
         viewDirection.rotation = Quaternion.Euler(mousePosY, mousePosX, 0);
         Player.rotation = Quaternion.Euler(0, mousePosX, 0);
     }
+
+    public Quaternion getViewDirection()
+    {
+        return viewDirection.rotation = Quaternion.Euler(0, mousePosX, 0);
+    }
 }

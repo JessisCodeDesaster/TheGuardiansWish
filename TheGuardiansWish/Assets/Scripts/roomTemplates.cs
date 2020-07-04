@@ -49,7 +49,7 @@ public class roomTemplates : MonoBehaviour
     {
         for (int i = 0; i < rooms.Count - 1; i++)
         {
-            rand = Random.Range(1, 5);
+            rand = Random.Range(2, 5);
             roomCount++;
             for (int j = 0; j < rand; j++)
             {
