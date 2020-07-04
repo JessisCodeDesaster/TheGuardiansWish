@@ -23,6 +23,7 @@ public class cameraController : MonoBehaviour
         mousePosX += Input.GetAxis("Mouse X") * rotationSpeed;
         mousePosY -= Input.GetAxis("Mouse Y") * rotationSpeed;
 
+        //for debuff 
         /* -- um Achsen zu invertieren
          mousePosX -= Input.GetAxis("Mouse X") * rotationSpeed;
         mousePosY += Input.GetAxis("Mouse Y") * rotationSpeed;

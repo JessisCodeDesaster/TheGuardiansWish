@@ -38,7 +38,7 @@ public class roomTemplates : MonoBehaviour
         if (waitTime <= 0 && spawned == false)
         {
             spawnEnemies();
-        }
+        } 
         else
         {
             waitTime -= Time.deltaTime;

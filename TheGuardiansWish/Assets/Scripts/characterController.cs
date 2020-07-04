@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class characterController : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody body;
     public bool playerOnGround = true;
-    // private Collider room;
-    // private Vector3 positionRoom;
+
+    //for the lifebar
+    public int health;
+    public RawImage[] hearts_full;
+    public RawImage[] hearts_empty;
 
     //for the shooting
     public GameObject start;
@@ -28,6 +32,20 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i<8; i++)
+        {
+            if (i < health)
+            {
+                hearts_full[i].enabled = true;
+                hearts_empty[i].enabled = false;
+            }
+            else
+            {
+                hearts_full[i].enabled = false;
+                hearts_empty[i].enabled = true;
+            }
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized * moveSpeed * Time.deltaTime;
@@ -42,19 +60,13 @@ public class characterController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "enemyProjectile")
         {
-            playerOnGround = true;
+            Destroy(other.gameObject);
+            health--;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //hier die türen regeln sollte klappen!
-        //Debug.Log(other);
-        //room = other;
-        //positionRoom = other.transform.position;
-    }
 }

@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Spawn
-  - Rooms
-  - Door
-  - Projectile
-  - enemyProjectile
+  tags: []
   layers:
   - Default
   - TransparentFX
