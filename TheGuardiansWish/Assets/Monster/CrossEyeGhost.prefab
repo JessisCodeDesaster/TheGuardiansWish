@@ -172,7 +172,7 @@ MonoBehaviour:
   movementSpeed: 0.5
   health: 3
   enemyProjectiles:
-  - {fileID: 3089842636812795386, guid: 04a034527b9d0904bbd26df1fe0bc80e, type: 3}
+  - {fileID: 2947277133552801537, guid: fdb9e701bb3a9b440a3549cc54358cae, type: 3}
   start: {fileID: 7365867954863649814}
 --- !u!1 &7365867954863649814
 GameObject:
