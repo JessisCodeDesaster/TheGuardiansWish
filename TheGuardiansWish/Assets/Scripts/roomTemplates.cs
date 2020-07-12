@@ -11,6 +11,8 @@ public class roomTemplates : MonoBehaviour
     public GameObject[] right;
 
     public List<GameObject> rooms;
+    public List<GameObject> monsterInRoom = new List<GameObject>();
+
 
     public float waitTime;
     public GameObject boss;
@@ -23,6 +25,8 @@ public class roomTemplates : MonoBehaviour
 
     public bool spawned;
     int roomCount;
+
+    //doorController doorController;
 
     // Start is called before the first frame update
     void Start()
@@ -51,14 +55,16 @@ public class roomTemplates : MonoBehaviour
         {
             rand = Random.Range(2, 5);
             roomCount++;
+            //rooms[i].AddComponent<doorController>();
             for (int j = 0; j < rand; j++)
             {
                 x = Random.Range(-9, 9);
                 z = Random.Range(-9, 9);
                 position = new Vector3(x, 1.5f, z);
-                Instantiate(monster, rooms[i].transform.position + position, Quaternion.identity);
+                monsterInRoom.Add(Instantiate(monster, rooms[i].transform.position + position, Quaternion.identity));
             }
-            Debug.Log(roomCount);
+        Debug.Log(roomCount);
+            
         }
         if (roomCount +1 == rooms.Count)
         {
