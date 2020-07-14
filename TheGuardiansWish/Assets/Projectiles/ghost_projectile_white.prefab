@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rate: 2
+  rate: 1
 --- !u!65 &881715278541088857
 BoxCollider:
   m_ObjectHideFlags: 0

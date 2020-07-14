@@ -1,22 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ghostBehaviour : MonoBehaviour
+public class bossGhostBehaviour : MonoBehaviour
 {
     Transform playerPosition;
     public float followRadius = 15f;
     public float movementSpeed = 0.5f;
-    public int health;
 
     private float firerate = 2;
     public List<GameObject> enemyProjectiles = new List<GameObject>();
     private GameObject enemyProjectile;
     public GameObject start;
 
+
+    public int maxHealth = 100;
+    public int health;
+
+    public Slider healthbar;
+
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
+        healthbar.value = health;
+
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         enemyProjectile = enemyProjectiles[0];
     }
@@ -24,25 +33,31 @@ public class ghostBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthbar.value = health;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
         Vector3 viewDirection = playerPosition.position - transform.position;
         float actualDistance = Vector3.Distance(playerPosition.position, transform.position);
-        if(actualDistance <= followRadius)
+        if (actualDistance <= followRadius)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 2f * Time.deltaTime);
             transform.position += transform.forward * movementSpeed * Time.deltaTime;
-
-            /*if (shootingtime >= Time.deltaTime)
-            {
-                shootAtPlayer();
-                shootingtime += 0.5f;
-            }*/
 
             if (Time.time >= firerate)
             {
                 firerate = Time.time + 1 / enemyProjectile.GetComponent<shooting>().rate;
                 shootAtPlayer();
             }
-            
+
         }
     }
 
@@ -50,13 +65,7 @@ public class ghostBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Projectile")
         {
-            health--;
-            if (health <= 0)
-            {
-                transform.position = new Vector3(0, -5000, 0);
-                waitForDestroy();
-                //Destroy(gameObject);
-            }
+            health = health -10;
             Destroy(other.gameObject);
         }
     }
@@ -67,10 +76,4 @@ public class ghostBehaviour : MonoBehaviour
         enemyProjectiles = Instantiate(enemyProjectile, start.transform.position, Quaternion.identity);
         enemyProjectiles.transform.localRotation = transform.rotation;
     }
-
-    IEnumerator waitForDestroy()
-    {
-        yield return new WaitForSeconds(1f);
-    }
-
 }

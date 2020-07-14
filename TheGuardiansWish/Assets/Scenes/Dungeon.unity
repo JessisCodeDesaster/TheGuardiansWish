@@ -2290,6 +2290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284471080}
   - component: {fileID: 1284471081}
+  - component: {fileID: 1284471082}
   m_Layer: 0
   m_Name: W-TBLR
   m_TagString: Untagged
@@ -2338,6 +2339,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1284471082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284471079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2031219a3ead6a045ab6da5a8abf721e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterInRoomControll: []
+  playerInRoom: 0
+  dissolveTime: 4
+  doors: []
+  doorMat: {fileID: 2100000, guid: ebe56a911d9a63d40a06e22bfcfc6303, type: 2}
+  dissolveMat: {fileID: 2100000, guid: aa114549a611ee74ca52a6a7a889ef54, type: 2}
+  respawnMat: {fileID: 2100000, guid: aa114549a611ee74ca52a6a7a889ef54, type: 2}
+  monstercount: 0
+  monsterkilled: 0
 --- !u!1 &1317756894
 GameObject:
   m_ObjectHideFlags: 0

@@ -359,11 +359,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterInRoomControll: []
+  playerInRoom: 0
   dissolveTime: 1
   doors: []
   doorMat: {fileID: 2100000, guid: ebe56a911d9a63d40a06e22bfcfc6303, type: 2}
   dissolveMat: {fileID: 2100000, guid: aa114549a611ee74ca52a6a7a889ef54, type: 2}
   respawnMat: {fileID: 0}
+  monstercount: 0
+  monsterkilled: 0
 --- !u!1 &1672661341485063092
 GameObject:
   m_ObjectHideFlags: 0
