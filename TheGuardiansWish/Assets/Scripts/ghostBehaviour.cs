@@ -28,7 +28,7 @@ public class ghostBehaviour : MonoBehaviour
         float actualDistance = Vector3.Distance(playerPosition.position, transform.position);
         if(actualDistance <= followRadius)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 2f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 5f * Time.deltaTime);
             transform.position += transform.forward * movementSpeed * Time.deltaTime;
 
             /*if (shootingtime >= Time.deltaTime)
@@ -42,7 +42,6 @@ public class ghostBehaviour : MonoBehaviour
                 firerate = Time.time + 1 / enemyProjectile.GetComponent<shooting>().rate;
                 shootAtPlayer();
             }
-            
         }
     }
 
@@ -53,9 +52,9 @@ public class ghostBehaviour : MonoBehaviour
             health--;
             if (health <= 0)
             {
-                transform.position = new Vector3(0, -5000, 0);
+                //transform.position = new Vector3(0, -5000, 0);
                 waitForDestroy();
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
             Destroy(other.gameObject);
         }
@@ -71,6 +70,13 @@ public class ghostBehaviour : MonoBehaviour
     IEnumerator waitForDestroy()
     {
         yield return new WaitForSeconds(1f);
+    }
+
+    void OnDestroy()
+    {
+        PowerUpsController.position = transform.position;
+        PowerUpsController.monstersKilled += 1;
+        Debug.Log(PowerUpsController.monstersKilled);
     }
 
 }

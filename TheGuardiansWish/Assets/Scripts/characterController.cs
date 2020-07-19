@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class characterController : MonoBehaviour
 {
-    public float moveSpeed;
+    public static float moveSpeed;
     public Rigidbody body;
     public bool playerOnGround = true;
 
@@ -19,7 +19,7 @@ public class characterController : MonoBehaviour
     public List<GameObject> projectiles = new List<GameObject>();
     private GameObject projectile;
     public cameraController viewDirection;
-    private float firerate;
+    public static float firerate;
 
     // Start is called before the first frame update
     void Start()
