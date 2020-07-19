@@ -20,6 +20,8 @@ public class bossGhostBehaviour : MonoBehaviour
 
     public Slider healthbar;
 
+    public GameObject room;
+
     // Start is called before the first frame update
     void Start()
     {

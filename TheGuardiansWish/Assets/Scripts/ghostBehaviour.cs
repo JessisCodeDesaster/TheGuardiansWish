@@ -14,6 +14,8 @@ public class ghostBehaviour : MonoBehaviour
     private GameObject enemyProjectile;
     public GameObject start;
 
+    public GameObject room;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +33,6 @@ public class ghostBehaviour : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 5f * Time.deltaTime);
             transform.position += transform.forward * movementSpeed * Time.deltaTime;
 
-            /*if (shootingtime >= Time.deltaTime)
-            {
-                shootAtPlayer();
-                shootingtime += 0.5f;
-            }*/
-
             if (Time.time >= firerate)
             {
                 firerate = Time.time + 1 / enemyProjectile.GetComponent<shooting>().rate;
@@ -52,8 +48,9 @@ public class ghostBehaviour : MonoBehaviour
             health--;
             if (health <= 0)
             {
-                //transform.position = new Vector3(0, -5000, 0);
+                transform.position = new Vector3(0, -5000, 0);
                 waitForDestroy();
+                room.GetComponent<doorController>().monsterInRoomControll.Remove(gameObject);
                 Destroy(gameObject);
             }
             Destroy(other.gameObject);
@@ -74,9 +71,8 @@ public class ghostBehaviour : MonoBehaviour
 
     void OnDestroy()
     {
-        PowerUpsController.position = transform.position;
+        PowerUpsController.position = transform.position + new Vector3(0,5000,0);
         PowerUpsController.monstersKilled += 1;
         Debug.Log(PowerUpsController.monstersKilled);
     }
-
 }

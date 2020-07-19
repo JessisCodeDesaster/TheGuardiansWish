@@ -794,8 +794,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 1.7246971, z: 20}
-  m_Center: {x: 0, y: 0.36234856, z: 0}
+  m_Size: {x: 18.516361, y: 1.7246971, z: 18.246595}
+  m_Center: {x: -0.06744067, y: 0.36234856, z: -0.06744003}
 --- !u!114 &-1946543967551409369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,13 +810,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterInRoomControll: []
   playerInRoom: 0
+  doorsOpen: 0
   dissolveTime: 1
-  doors: []
+  doors:
+  - {fileID: 4947068545337525170}
+  - {fileID: 8138858765179021932}
   doorMat: {fileID: 2100000, guid: ebe56a911d9a63d40a06e22bfcfc6303, type: 2}
   dissolveMat: {fileID: 2100000, guid: aa114549a611ee74ca52a6a7a889ef54, type: 2}
   respawnMat: {fileID: 0}
-  monstercount: 0
-  monsterkilled: 0
 --- !u!1 &6254998786016802901
 GameObject:
   m_ObjectHideFlags: 0

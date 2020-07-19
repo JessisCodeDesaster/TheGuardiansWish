@@ -6,8 +6,8 @@ public class doorController : MonoBehaviour
 {
     public List<GameObject> monsterInRoomControll;
 
-    public  bool playerInRoom = false;
-    private bool doorsOpen = false;
+    public bool playerInRoom = false;
+    public bool doorsOpen = false;
     public float dissolveTime = 4;
 
     //public List<GameObject> doors;
@@ -17,41 +17,29 @@ public class doorController : MonoBehaviour
     public Material dissolveMat;
     public Material respawnMat;
 
-    public int monstercount;
-    public int monsterkilled;
-
     // Start is called before the first frame update
     void Start()
     {
-        doors = GameObject.FindGameObjectsWithTag("Door");
         foreach (GameObject door in doors)
         {
             door.SetActive(false);
         }
         doorsOpen = true;
-
-        monstercount = 0;
-        monsterkilled = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //close door
-        if (Input.GetKeyDown(KeyCode.Q) && doorsOpen)
+        if (playerInRoom && monsterInRoomControll.Count != 0 && doorsOpen)
         {
             doorsOpen = false;
             StartCoroutine(closeDoor());
-            Debug.Log("Tür geschlossen");
         }
 
-        //opens door
-        else if (Input.GetKeyDown(KeyCode.Q) && !doorsOpen)
+        else if (playerInRoom && monsterInRoomControll.Count == 0 && !doorsOpen )
         {
             doorsOpen = true;
             StartCoroutine(openDoor());
-            Debug.Log("Tür geöffnet");
         }
     }
 
@@ -70,6 +58,7 @@ public class doorController : MonoBehaviour
         {
             door.SetActive(false);
         }
+        Debug.Log("Tür geöffnet");
     }
 
     IEnumerator closeDoor()
@@ -78,6 +67,7 @@ public class doorController : MonoBehaviour
         {
             door.SetActive(true);
             door.GetComponent<Renderer>().material = dissolveMat;
+            Debug.Log("1x Tür zu");
         }
         for (float i = 0.51f; i > -1.1f; i -= 0.1f)
         {
@@ -91,18 +81,7 @@ public class doorController : MonoBehaviour
         Debug.Log("Tür geschlossen");
     }
 
-    /*public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "monster")
-        {
-            if (playerInRoom)
-            {
-                Debug.Log("Door closed");
-            }
-        }
-    }*/
-
-    /*public void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -117,25 +96,6 @@ public class doorController : MonoBehaviour
         {
             playerInRoom = true;
             Debug.Log("Player entered");
-        }
-    }*/
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "monster")
-        {
-            monsterInRoomControll.Add(other.gameObject);
-            this.monstercount++;
-            Debug.Log("Monster entered");
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "monster")
-        {
-            this.monsterkilled++;
-            Debug.Log("Monster left");
         }
     }
 }

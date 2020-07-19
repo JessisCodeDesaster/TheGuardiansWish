@@ -26,7 +26,7 @@ public class roomTemplates : MonoBehaviour
     public bool spawned;
     int roomCount;
 
-    //doorController doorController;
+    int monstercount;
 
     // Start is called before the first frame update
     void Start()
@@ -55,13 +55,14 @@ public class roomTemplates : MonoBehaviour
         {
             rand = Random.Range(2, 5);
             roomCount++;
-            //rooms[i].AddComponent<doorController>();
             for (int j = 0; j < rand; j++)
             {
                 x = Random.Range(-9, 9);
                 z = Random.Range(-9, 9);
                 position = new Vector3(x, 1.5f, z);
-                monsterInRoom.Add(Instantiate(monster, rooms[i].transform.position + position, Quaternion.identity));
+                rooms[i].GetComponent<doorController>().monsterInRoomControll.Add(Instantiate(monster, rooms[i].transform.position + position, Quaternion.identity));
+                int count = rooms[i].GetComponent<doorController>().monsterInRoomControll.Count;
+                rooms[i].GetComponent<doorController>().monsterInRoomControll[count -1].GetComponent<ghostBehaviour>().room = rooms[i];
             }
         Debug.Log(roomCount);
             
@@ -69,7 +70,10 @@ public class roomTemplates : MonoBehaviour
         if (roomCount +1 == rooms.Count)
         {
             position = new Vector3(4, 0, 0);
-            Instantiate(boss, rooms[roomCount].transform.position + position, Quaternion.identity);
+            rooms[roomCount].GetComponent<doorController>().monsterInRoomControll.Add(Instantiate(boss, rooms[roomCount].transform.position + position, Quaternion.identity));
+            int count2 = rooms[roomCount].GetComponent<doorController>().monsterInRoomControll.Count;
+            rooms[roomCount].GetComponent<doorController>().monsterInRoomControll[count2 - 1].GetComponent<bossGhostBehaviour>().room = rooms[roomCount];
+
             Debug.Log("Boss");
         }
         spawned = true;
