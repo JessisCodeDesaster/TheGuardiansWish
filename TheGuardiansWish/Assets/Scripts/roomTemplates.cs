@@ -13,7 +13,6 @@ public class roomTemplates : MonoBehaviour
     public List<GameObject> rooms;
     public List<GameObject> monsterInRoom = new List<GameObject>();
 
-
     public float waitTime;
     public GameObject boss;
     public GameObject monster;
