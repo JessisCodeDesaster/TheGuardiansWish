@@ -527,6 +527,7 @@ MonoBehaviour:
   start: {fileID: 1030541675556850145}
   room: {fileID: 0}
   death: {fileID: 6975795228808627862, guid: a56920fb3e8832140a01b1aedd93617b, type: 3}
+  dissolveMat: {fileID: 2100000, guid: ec6b1ea9687ab304a879aac1702eb1fe, type: 2}
 --- !u!1 &9204996130485902491
 GameObject:
   m_ObjectHideFlags: 0

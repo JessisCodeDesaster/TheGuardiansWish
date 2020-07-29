@@ -50,11 +50,9 @@ public class ghostBehaviour : MonoBehaviour
             health--;
             if (health <= 0)
             {
-                transform.position += new Vector3(0, -5000, 0);
-
                 ParticleSystem ghost_despawn;
+                transform.position += new Vector3(0, -5000, 0);
                 ghost_despawn = Instantiate(death, transform.position + new Vector3(0, 5000, 0), Quaternion.identity);
-
                 waitForDestroy();
                 room.GetComponent<doorController>().monsterInRoomControll.Remove(gameObject);
                 Destroy(gameObject);
@@ -62,6 +60,8 @@ public class ghostBehaviour : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
 
     void shootAtPlayer()
     {
