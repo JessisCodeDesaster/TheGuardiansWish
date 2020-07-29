@@ -175,6 +175,8 @@ MonoBehaviour:
   enemyProjectiles:
   - {fileID: 2947277133552801537, guid: fdb9e701bb3a9b440a3549cc54358cae, type: 3}
   start: {fileID: 7365867954863649814}
+  room: {fileID: 0}
+  death: {fileID: 6975795228808627862, guid: a56920fb3e8832140a01b1aedd93617b, type: 3}
 --- !u!65 &6451458626300393417
 BoxCollider:
   m_ObjectHideFlags: 0

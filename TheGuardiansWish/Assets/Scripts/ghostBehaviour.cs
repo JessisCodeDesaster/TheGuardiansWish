@@ -16,6 +16,8 @@ public class ghostBehaviour : MonoBehaviour
 
     public GameObject room;
 
+    public ParticleSystem death;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +50,11 @@ public class ghostBehaviour : MonoBehaviour
             health--;
             if (health <= 0)
             {
-                transform.position = new Vector3(0, -5000, 0);
+                transform.position += new Vector3(0, -5000, 0);
+
+                ParticleSystem ghost_despawn;
+                ghost_despawn = Instantiate(death, transform.position + new Vector3(0, 5000, 0), Quaternion.identity);
+
                 waitForDestroy();
                 room.GetComponent<doorController>().monsterInRoomControll.Remove(gameObject);
                 Destroy(gameObject);

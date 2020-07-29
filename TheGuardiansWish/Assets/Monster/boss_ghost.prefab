@@ -99,6 +99,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   healthbar: {fileID: 1136243104169929046}
+  room: {fileID: 0}
 --- !u!1 &731627979670471218
 GameObject:
   m_ObjectHideFlags: 0
