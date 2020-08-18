@@ -11,9 +11,13 @@ public class bossGhostBehaviour : MonoBehaviour
 
     private float firerate = 2;
     public List<GameObject> enemyProjectiles = new List<GameObject>();
-    private GameObject enemyProjectile;
-    public GameObject start;
 
+    private GameObject enemyProjectile;
+    private GameObject bigEnemyProjectile;
+
+    public GameObject start1;
+    public GameObject start2;
+    public GameObject start3;
 
     public int maxHealth = 100;
     public int health;
@@ -30,6 +34,7 @@ public class bossGhostBehaviour : MonoBehaviour
 
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         enemyProjectile = enemyProjectiles[0];
+        bigEnemyProjectile = enemyProjectiles[1];
     }
 
     // Update is called once per frame
@@ -49,17 +54,14 @@ public class bossGhostBehaviour : MonoBehaviour
 
         Vector3 viewDirection = playerPosition.position - transform.position;
         float actualDistance = Vector3.Distance(playerPosition.position, transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 2f * Time.deltaTime);
         if (actualDistance <= followRadius)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 2f * Time.deltaTime);
-            transform.position += transform.forward * movementSpeed * Time.deltaTime;
-
             if (Time.time >= firerate)
             {
                 firerate = Time.time + 1 / enemyProjectile.GetComponent<shooting>().rate;
                 shootAtPlayer();
             }
-
         }
     }
 
@@ -74,8 +76,50 @@ public class bossGhostBehaviour : MonoBehaviour
 
     void shootAtPlayer()
     {
-        GameObject enemyProjectiles;
-        enemyProjectiles = Instantiate(enemyProjectile, start.transform.position, Quaternion.identity);
-        enemyProjectiles.transform.localRotation = transform.rotation;
+        int x = Random.Range(0, 3);
+
+        if(x == 0)
+        {
+            GameObject enemyProjectiles1;
+            enemyProjectiles1 = Instantiate(enemyProjectile, start1.transform.position, Quaternion.identity);
+            enemyProjectiles1.transform.localRotation = transform.rotation;
+
+            GameObject enemyProjectiles2;
+            enemyProjectiles2 = Instantiate(enemyProjectile, start2.transform.position, Quaternion.identity);
+            enemyProjectiles2.transform.localRotation = transform.rotation;
+
+            GameObject enemyProjectiles3;
+            enemyProjectiles3 = Instantiate(enemyProjectile, start3.transform.position, Quaternion.identity);
+            enemyProjectiles3.transform.localRotation = transform.rotation;
+        }
+        
+        if (x == 1)
+        {
+            GameObject enemyProjectiles1;
+            enemyProjectiles1 = Instantiate(enemyProjectile, start2.transform.position, Quaternion.identity);
+            enemyProjectiles1.transform.localRotation = transform.rotation;
+        }
+
+        if (x == 2)
+        {
+            GameObject enemyProjectiles1;
+            enemyProjectiles1 = Instantiate(bigEnemyProjectile, start2.transform.position, Quaternion.identity);
+            enemyProjectiles1.transform.localRotation = transform.rotation;
+        }
+
+        if (x == 3)
+        {
+            GameObject enemyProjectiles1;
+            enemyProjectiles1 = Instantiate(bigEnemyProjectile, start1.transform.position, Quaternion.identity);
+            enemyProjectiles1.transform.localRotation = transform.rotation;
+
+            GameObject enemyProjectiles2;
+            enemyProjectiles2 = Instantiate(bigEnemyProjectile, start2.transform.position, Quaternion.identity);
+            enemyProjectiles2.transform.localRotation = transform.rotation;
+
+            GameObject enemyProjectiles3;
+            enemyProjectiles3 = Instantiate(bigEnemyProjectile, start3.transform.position, Quaternion.identity);
+            enemyProjectiles3.transform.localRotation = transform.rotation;
+        }
     }
 }

@@ -68,7 +68,7 @@ public class roomTemplates : MonoBehaviour
         }
         if (roomCount +1 == rooms.Count)
         {
-            position = new Vector3(4, 0, 0);
+            position = new Vector3(4, 1, 0);
             rooms[roomCount].GetComponent<doorController>().monsterInRoomControll.Add(Instantiate(boss, rooms[roomCount].transform.position + position, Quaternion.identity));
             int count2 = rooms[roomCount].GetComponent<doorController>().monsterInRoomControll.Count;
             rooms[roomCount].GetComponent<doorController>().monsterInRoomControll[count2 - 1].GetComponent<bossGhostBehaviour>().room = rooms[roomCount];
