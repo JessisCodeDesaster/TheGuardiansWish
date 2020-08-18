@@ -12,7 +12,7 @@ public class PowerUpsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -32,6 +32,9 @@ public class PowerUpsController : MonoBehaviour
 
     void spawnPowerUp()
     {
-        PowerUps.Add(Instantiate(PowerUps[Random.Range(0,2)], position + new Vector3(0,1,0), Quaternion.identity));
+        float posx = position.x;
+        float posz = position.z;
+        Vector3 newPos = new Vector3(posx, 1.5f, posz);
+        PowerUps.Add(Instantiate(PowerUps[Random.Range(0, 2)], newPos, Quaternion.identity));
     }
 }

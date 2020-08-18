@@ -17,12 +17,16 @@ public class ghostBehaviour : MonoBehaviour
     public GameObject room;
 
     public ParticleSystem death;
+    float posy;
+    bool up;
 
     // Start is called before the first frame update
     void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         enemyProjectile = enemyProjectiles[0];
+        posy = 2.5f;
+        up = true;
     }
 
     // Update is called once per frame
@@ -32,9 +36,28 @@ public class ghostBehaviour : MonoBehaviour
         float actualDistance = Vector3.Distance(playerPosition.position, transform.position);
         if(actualDistance <= followRadius)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 5f * Time.deltaTime);
-            transform.position += transform.forward * movementSpeed * Time.deltaTime;
-
+            if(posy <= 3f && up == true)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 5f * Time.deltaTime);
+                transform.position += transform.forward * movementSpeed * Time.deltaTime;
+                transform.position += new Vector3(0,0.003f,0);
+                posy += 0.003f;
+                if(posy >= 3f)
+                {
+                    up = false;
+                }
+            }
+            if(posy >= 2.5f && up == false)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPosition.position - transform.position), 5f * Time.deltaTime);
+                transform.position += transform.forward * movementSpeed * Time.deltaTime;
+                transform.position += new Vector3(0, -0.003f, 0);
+                posy -= 0.003f;
+                if (posy <= 2.5f)
+                {
+                    up = true;
+                }
+            }
             if (Time.time >= firerate)
             {
                 firerate = Time.time + 1 / enemyProjectile.GetComponent<shooting>().rate;
