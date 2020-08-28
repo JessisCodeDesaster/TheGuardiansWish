@@ -1367,6 +1367,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chibi-test
       objectReference: {fileID: 0}
+    - target: {fileID: 2380563241440355014, guid: e4a2cfbbb842b784dadb14bb350f21d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4a2cfbbb842b784dadb14bb350f21d5, type: 3}
 --- !u!1001 &1224886627
@@ -2198,7 +2203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1655522418
 Transform:
   m_ObjectHideFlags: 0
@@ -2302,7 +2307,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673848133}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 000af4dbe9d74af428ad2b3bb45a50be, type: 3}

@@ -44,6 +44,10 @@ public class characterController : MonoBehaviour
                 hearts_full[i].enabled = false;
                 hearts_empty[i].enabled = true;
             }
+            if (health <= 0)
+            {
+                FindObjectOfType<GameManager>().GameOver();
+            }
         }
 
         float horizontal = Input.GetAxis("Horizontal");

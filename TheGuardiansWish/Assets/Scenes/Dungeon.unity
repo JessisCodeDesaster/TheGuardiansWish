@@ -137,8 +137,9 @@ GameObject:
   m_Component:
   - component: {fileID: 47249209}
   - component: {fileID: 47249208}
+  - component: {fileID: 47249210}
   m_Layer: 0
-  m_Name: scripts
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,8 +174,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &47249210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47249207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14afe63d0c1ed24aa9150ac33a20858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &54031996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2663265362124005903, guid: c005956632509b84e8724b8f675d682f,
@@ -1517,11 +1530,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675991827}
-  m_LocalRotation: {x: 0.018150423, y: 0, z: 0, w: 0.9998353}
-  m_LocalPosition: {x: 0, y: 0.47, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.018150423, y: -0, z: -0, w: 0.9998353}
+  m_LocalPosition: {x: 0, y: -0.78, z: -0.8}
+  m_LocalScale: {x: 0.4, y: 0.40000004, z: 0.40000004}
   m_Children: []
-  m_Father: {fileID: 1459836228}
+  m_Father: {fileID: 797388994}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 2.08, y: 0, z: 0}
 --- !u!108 &675991829
@@ -1536,7 +1549,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 30
+  m_Intensity: 35
   m_Range: 30
   m_SpotAngle: 96.70114
   m_InnerSpotAngle: 0
@@ -2272,6 +2285,7 @@ Transform:
   - {fileID: 2004731291}
   - {fileID: 1791289913}
   - {fileID: 410787146}
+  - {fileID: 675991828}
   - {fileID: 1459836228}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2614,7 +2628,7 @@ PrefabInstance:
     - target: {fileID: 1680454535689097429, guid: e4a2cfbbb842b784dadb14bb350f21d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1680454535689097429, guid: e4a2cfbbb842b784dadb14bb350f21d5,
         type: 3}
@@ -2650,6 +2664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: chibi-test
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380563241440355014, guid: e4a2cfbbb842b784dadb14bb350f21d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4a2cfbbb842b784dadb14bb350f21d5, type: 3}
@@ -4614,7 +4633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1765118603
 GameObject:
@@ -9555,7 +9574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1791289913
 Transform:
   m_ObjectHideFlags: 0
