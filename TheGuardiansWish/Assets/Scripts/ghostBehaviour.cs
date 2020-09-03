@@ -15,6 +15,10 @@ public class ghostBehaviour : MonoBehaviour
     public GameObject start;
 
     public GameObject room;
+    public GameObject ghost_body;
+    public Material body_material;
+    public Material body_hit_material;
+    public Material body_hit2_material;
 
     public ParticleSystem death;
     float posy;
@@ -71,6 +75,8 @@ public class ghostBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Projectile")
         {
             health--;
+            StartCoroutine(ghostHit());
+
             if (health <= 0)
             {
                 ParticleSystem ghost_despawn;
@@ -82,6 +88,16 @@ public class ghostBehaviour : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
+    }
+
+    IEnumerator ghostHit()
+    {
+        ghost_body.GetComponent<Renderer>().material = body_hit2_material;
+        
+        yield return new WaitForSeconds(0.1f);
+        ghost_body.GetComponent<Renderer>().material = body_hit_material;
+        yield return new WaitForSeconds(0.1f);
+        ghost_body.GetComponent<Renderer>().material = body_material;
     }
 
 
