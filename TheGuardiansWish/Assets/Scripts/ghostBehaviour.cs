@@ -21,6 +21,7 @@ public class ghostBehaviour : MonoBehaviour
     public Material body_hit2_material;
 
     public ParticleSystem death;
+    public List<Light> enlighten;
     float posy;
     bool up;
 
@@ -80,8 +81,10 @@ public class ghostBehaviour : MonoBehaviour
             if (health <= 0)
             {
                 ParticleSystem ghost_despawn;
+                Light light;
                 transform.position += new Vector3(0, -5000, 0);
                 ghost_despawn = Instantiate(death, transform.position + new Vector3(0, 5000, 0), Quaternion.identity);
+                light = Instantiate(enlighten[Random.Range(0,2)], transform.position + new Vector3(0, 5000, 0), Quaternion.identity);
                 waitForDestroy();
                 room.GetComponent<doorController>().monsterInRoomControll.Remove(gameObject);
                 Destroy(gameObject);
@@ -99,8 +102,6 @@ public class ghostBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         ghost_body.GetComponent<Renderer>().material = body_material;
     }
-
-
 
     void shootAtPlayer()
     {

@@ -15,7 +15,7 @@ public class minimap_mesh : MonoBehaviour
     public static Mesh map_room_mesh;
     public Material inactiveRoom;
     public Material activeRoom;
-    public Renderer rend;
+    Renderer rend;
 
     void Start()
     {
@@ -83,7 +83,6 @@ public class minimap_mesh : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             map_room.GetComponent<Renderer>().material = inactiveRoom;
-            rend.material.color = new Color(0.5f, 0.5f, 0.5f, 1);
             Debug.Log("Player left");
         }
     }

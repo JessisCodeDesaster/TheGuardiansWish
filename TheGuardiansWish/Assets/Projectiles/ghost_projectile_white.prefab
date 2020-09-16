@@ -7,6 +7,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 33153
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 24078823753053462, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.41509432
+      objectReference: {fileID: 0}
     - target: {fileID: 24078823753053464, guid: 2e6967c0615a32045be94dc4ef47d16e,
         type: 3}
       propertyPath: m_LocalScale.x

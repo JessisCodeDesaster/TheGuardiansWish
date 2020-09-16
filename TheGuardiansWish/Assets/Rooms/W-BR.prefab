@@ -289,9 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75eebab0e25ca45a2436aed0ef5a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveRoom: {fileID: 2100000, guid: b8ffa0553b9a2da4588873a70594263b, type: 2}
-  activeRoom: {fileID: 2100000, guid: 02462ba6c0692c740b55ef94abc3429b, type: 2}
-  rend: {fileID: 0}
+  inactiveRoom: {fileID: 2100000, guid: 612cd8cd7fa756b4fb4aec4877a8e043, type: 2}
+  activeRoom: {fileID: 2100000, guid: fd0c5fd0150288149ae88bbd571ecf6d, type: 2}
 --- !u!1 &3851555809486440029
 GameObject:
   m_ObjectHideFlags: 0

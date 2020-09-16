@@ -15,7 +15,12 @@ public class doorController : MonoBehaviour
 
     public Material doorMat;
     public Material dissolveMat;
+    public Material dissolveMatFlower;
     public Material respawnMat;
+
+    public List<GameObject> flowers;
+    public Material flower_light;
+    public Material flower_dark;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +45,7 @@ public class doorController : MonoBehaviour
         {
             doorsOpen = true;
             StartCoroutine(openDoor());
+            //StartCoroutine(colorFlower());
         }
     }
 
@@ -60,6 +66,24 @@ public class doorController : MonoBehaviour
         }
         Debug.Log("Tür geöffnet");
     }
+
+    /*
+    IEnumerator colorFlower()
+    {
+        for (int k = 0; k < flowers.Count; k++)
+        {
+            flowers[k].GetComponent<Renderer>().material = dissolveMatFlower;
+        }
+        for (float i = 0.51f; i > -1.1f; i -= 0.1f)
+        {
+            yield return new WaitForSeconds(0.04f);
+            dissolveMat.SetFloat("StartTime", i);
+        }
+        for (int k = 0; k < flowers.Count; k++)
+        {
+            flowers[k].GetComponent<Renderer>().material = flower_light;
+        }
+    }*/
 
     IEnumerator closeDoor()
     {
