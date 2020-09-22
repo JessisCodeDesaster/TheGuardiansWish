@@ -8,9 +8,7 @@ public class doorController : MonoBehaviour
 
     public bool playerInRoom = false;
     public bool doorsOpen = false;
-    public float dissolveTime = 4;
 
-    //public List<GameObject> doors;
     public GameObject[] doors;
 
     public Material doorMat;
@@ -45,7 +43,11 @@ public class doorController : MonoBehaviour
         {
             doorsOpen = true;
             StartCoroutine(openDoor());
-            //StartCoroutine(colorFlower());
+
+            foreach (GameObject flower in flowers)
+            {
+                StartCoroutine(colorFlower(flower));
+            }
         }
     }
 
@@ -66,24 +68,32 @@ public class doorController : MonoBehaviour
         }
         Debug.Log("Tür geöffnet");
     }
-
-    /*
-    IEnumerator colorFlower()
+    
+    IEnumerator colorFlower(GameObject flower)
     {
-        for (int k = 0; k < flowers.Count; k++)
-        {
-            flowers[k].GetComponent<Renderer>().material = dissolveMatFlower;
-        }
-        for (float i = 0.51f; i > -1.1f; i -= 0.1f)
+        /*flower.GetComponent<Renderer>().material = dissolveMatFlower;
+        for (float z = -0.51f; z < 1f; z += 0.1f)
         {
             yield return new WaitForSeconds(0.04f);
-            dissolveMat.SetFloat("StartTime", i);
+            dissolveMatFlower.SetFloat("StartTime", z);
         }
-        for (int k = 0; k < flowers.Count; k++)
+        for (float z = 1f; z > -0.51f; z -= 0.1f)
         {
-            flowers[k].GetComponent<Renderer>().material = flower_light;
+            yield return new WaitForSeconds(0.04f);
+            dissolveMatFlower.SetFloat("StartTime", z);
+        }*/
+
+        yield return new WaitForSeconds(0.5f);
+        int r = Random.Range(0, 2);
+        if (r == 0)
+        {
+            flower.GetComponent<Renderer>().material = flower_light;
         }
-    }*/
+        else if (r == 1)
+        {
+            flower.GetComponent<Renderer>().material = flower_dark;
+        }
+    }
 
     IEnumerator closeDoor()
     {
@@ -104,6 +114,7 @@ public class doorController : MonoBehaviour
         }
         Debug.Log("Tür geschlossen");
     }
+
 
     public void OnTriggerExit(Collider other)
     {

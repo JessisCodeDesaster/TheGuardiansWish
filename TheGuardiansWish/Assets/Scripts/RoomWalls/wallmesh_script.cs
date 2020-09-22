@@ -16,7 +16,6 @@ public class wallmesh_script : MonoBehaviour
 
     public Renderer rend;
 
-    //Ggf kann gameobject walls gelöscht werden
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +28,7 @@ public class wallmesh_script : MonoBehaviour
         walls.AddComponent<MeshFilter>();
         walls.AddComponent<MeshRenderer>();
         wallMesh = walls.GetComponent<MeshFilter>().mesh;
+        walls.AddComponent<MeshCollider>();
 
         v = 0;
         t = 0;
@@ -176,15 +176,5 @@ public class wallmesh_script : MonoBehaviour
         wallMesh.uv = uv;
         wallMesh.RecalculateNormals();
         Renderer rend = walls.GetComponent<Renderer>();
-
-        /*rend.material = new Material(Shader.Find("Specular"));
-        Texture texture = Resources.Load("1") as Texture;
-        rend.material.mainTexture = texture;
-
-        Rigidbody cityRigidbody = walls.AddComponent<Rigidbody>();
-        MeshCollider cityCollider = walls.AddComponent<MeshCollider>();
-        cityRigidbody.isKinematic = true;
-
-        cityCollider.sharedMesh = wallMesh;*/
     }
 }

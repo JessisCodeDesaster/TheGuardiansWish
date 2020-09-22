@@ -5083,7 +5083,12 @@ MonoBehaviour:
   - {fileID: 825475798927356183}
   doorMat: {fileID: 2100000, guid: ebe56a911d9a63d40a06e22bfcfc6303, type: 2}
   dissolveMat: {fileID: 2100000, guid: aa114549a611ee74ca52a6a7a889ef54, type: 2}
+  dissolveMatFlower: {fileID: 2100000, guid: 67386d549b8656844bb19048987d4996, type: 2}
   respawnMat: {fileID: 0}
+  flowers:
+  - {fileID: 4473329450463548823}
+  flower_light: {fileID: 2100000, guid: 6d7129fd4cec75e4bb1007b6b147becd, type: 2}
+  flower_dark: {fileID: 2100000, guid: 34683566a9149b94dbcb3eb76ae23d98, type: 2}
 --- !u!114 &-5942797181539532213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5285,7 +5290,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 02462ba6c0692c740b55ef94abc3429b, type: 2}
+      objectReference: {fileID: 2100000, guid: 172e20e84daadf540b00a78d11f5827b, type: 2}
+    - target: {fileID: -3806598351926334452, guid: 2f1010147e4d4484bafc1171553d8e23,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b10f6ca83aa4ed741a658040ce7eaa48, type: 2}
     - target: {fileID: -927199367670048503, guid: 2f1010147e4d4484bafc1171553d8e23,
         type: 3}
       propertyPath: m_Name
@@ -5296,6 +5306,12 @@ PrefabInstance:
 --- !u!4 &3673872429860549793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2f1010147e4d4484bafc1171553d8e23,
+    type: 3}
+  m_PrefabInstance: {fileID: 8612715700008116155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4473329450463548823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3921801694492128724, guid: 2f1010147e4d4484bafc1171553d8e23,
     type: 3}
   m_PrefabInstance: {fileID: 8612715700008116155}
   m_PrefabAsset: {fileID: 0}

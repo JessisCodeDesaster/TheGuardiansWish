@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: flowerDissolve
-  m_Shader: {fileID: -6465566751694194690, guid: b998ffdea68e5a24ea1e67f5e9996483,
+  m_Name: glowPlantL
+  m_Shader: {fileID: -6465566751694194690, guid: cad2546ba813b134983d82705bcab49e,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -49,10 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - StartTime: 1.09
-    - Vector1_35E88A3: 1
-    - Vector1_9DC2AA28: 0.03
-    - Vector1_CB3C7F50: 30
+    - Vector1_30DAB41D: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -75,13 +72,14 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_A112348D: {r: 0.14901957, g: 0.14901957, b: 0.14901957, a: 0}
-    - Color_F9DCD481: {r: 5.66791, g: 9.340786, b: 19.698313, a: 0}
+    - Color_3B04A53D: {r: 0, g: 0.92813265, b: 4.122633, a: 0}
+    - Vector2_8F94C637: {r: -1, g: 1, b: 0, a: 0}
+    - Vector2_9A1A5917: {r: 0.2, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &6121700642820630461
+--- !u!114 &7962332146687734385
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
