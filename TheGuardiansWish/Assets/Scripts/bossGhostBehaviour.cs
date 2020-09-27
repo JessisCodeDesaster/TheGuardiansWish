@@ -23,8 +23,14 @@ public class bossGhostBehaviour : MonoBehaviour
     public int health;
 
     public Slider healthbar;
-
     public GameObject room;
+    public GameObject portal;
+
+    public GameObject ghost_body;
+    public Material body_material;
+    public Material body_hit_material;
+    public Material body_hit2_material;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +50,10 @@ public class bossGhostBehaviour : MonoBehaviour
 
         if (health <= 0)
         {
+            GameObject blueportal;
+            blueportal = Instantiate(portal, transform.position - new Vector3(0,5,0), Quaternion.identity);
+            blueportal.transform.localScale += new Vector3(-2, -2, -2);
+            blueportal.transform.rotation = Quaternion.LookRotation(playerPosition.position - transform.position);
             Destroy(gameObject);
         }
 
@@ -71,7 +81,17 @@ public class bossGhostBehaviour : MonoBehaviour
         {
             health = health -10;
             Destroy(other.gameObject);
+            StartCoroutine(ghostHit());
         }
+    }
+
+    IEnumerator ghostHit()
+    {
+        ghost_body.GetComponent<Renderer>().material = body_hit2_material;
+        yield return new WaitForSeconds(0.1f);
+        ghost_body.GetComponent<Renderer>().material = body_hit_material;
+        yield return new WaitForSeconds(0.1f);
+        ghost_body.GetComponent<Renderer>().material = body_material;
     }
 
     void shootAtPlayer()

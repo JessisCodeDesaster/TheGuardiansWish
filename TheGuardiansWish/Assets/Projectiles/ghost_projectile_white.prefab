@@ -142,5 +142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ghost_projectile_white
       objectReference: {fileID: 0}
+    - target: {fileID: 7628523913437839875, guid: 2e6967c0615a32045be94dc4ef47d16e,
+        type: 3}
+      propertyPath: explode
+      value: 
+      objectReference: {fileID: 7068695435009138490, guid: ce50fa7299c0ca24b80c57fae27ee900,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e6967c0615a32045be94dc4ef47d16e, type: 3}

@@ -15,6 +15,7 @@ public class minimap_mesh : MonoBehaviour
     public static Mesh map_room_mesh;
     public Material inactiveRoom;
     public Material activeRoom;
+    public Material undiscovered;
     Renderer rend;
 
     void Start()

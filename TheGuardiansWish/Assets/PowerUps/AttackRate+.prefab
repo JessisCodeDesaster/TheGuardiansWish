@@ -109,3 +109,6 @@ MonoBehaviour:
   typeOfEffect: 2
   projectile: {fileID: 8341370559777674317, guid: 74f0d8219afc2a74282963abf223c42b,
     type: 3}
+  attackspeed: {fileID: 0}
+  attackrate: {fileID: 0}
+  movementspeed: {fileID: 0}

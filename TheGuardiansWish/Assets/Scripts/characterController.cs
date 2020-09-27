@@ -7,7 +7,6 @@ public class characterController : MonoBehaviour
 {
     public static float moveSpeed;
     public Rigidbody body;
-    public bool playerOnGround = true;
 
     //for the lifebar
     public int health;
@@ -20,6 +19,7 @@ public class characterController : MonoBehaviour
     private GameObject projectile;
     public cameraController viewDirection;
     public static float firerate;
+    public static bool canMove;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +27,13 @@ public class characterController : MonoBehaviour
         moveSpeed = 7.5f;
         body = GetComponent<Rigidbody>();
         projectile = projectiles[0];
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i<8; i++)
+        for (int i = 0; i < 8; i++)
         {
             if (i < health)
             {
@@ -50,17 +51,20 @@ public class characterController : MonoBehaviour
             }
         }
 
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized * moveSpeed * Time.deltaTime;
-        transform.Translate(movement, Space.Self);
-
-        if (Input.GetMouseButton(0) && Time.time >= firerate)
+        if (canMove == true)
         {
-            firerate = Time.time + 1 / projectile.GetComponent<shooting>().rate;
-            GameObject projectiles;
-            projectiles = Instantiate(projectile, start.transform.position, Quaternion.identity);
-            projectiles.transform.localRotation = viewDirection.getViewDirection();
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized * moveSpeed * Time.deltaTime;
+            transform.Translate(movement, Space.Self);
+
+            if (Input.GetMouseButton(0) && Time.time >= firerate)
+            {
+                firerate = Time.time + 1 / projectile.GetComponent<shooting>().rate;
+                GameObject projectiles;
+                projectiles = Instantiate(projectile, start.transform.position, Quaternion.identity);
+                projectiles.transform.localRotation = viewDirection.getViewDirection();
+            }
         }
     }
 
@@ -70,6 +74,22 @@ public class characterController : MonoBehaviour
         {
             Destroy(other.gameObject);
             health--;
+        }
+        if (other.gameObject.tag == "enemyProjectileTrap")
+        {
+            health--;
+        }
+    }
+
+    public static void change(bool move)
+    {
+        if (move == true)
+        {
+            canMove = true;
+        }
+        else if (move == false)
+        {
+            canMove = false;
         }
     }
 

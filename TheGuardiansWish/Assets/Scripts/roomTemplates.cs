@@ -16,6 +16,7 @@ public class roomTemplates : MonoBehaviour
     public float waitTime;
     public GameObject boss;
     public GameObject monster;
+    public GameObject trap;
 
     public int rand;
     public int x;
@@ -76,5 +77,6 @@ public class roomTemplates : MonoBehaviour
             Debug.Log("Boss");
         }
         spawned = true;
+
     }
 }

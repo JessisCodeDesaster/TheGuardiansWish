@@ -69,6 +69,7 @@ public class ghostBehaviour : MonoBehaviour
                 shootAtPlayer();
             }
         }
+
     }
 
     private void OnTriggerEnter(Collider other)

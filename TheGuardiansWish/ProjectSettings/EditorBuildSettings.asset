@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 861f89f8c4bbda34b9d65cd81458f2fc
   - enabled: 1
+    path: Assets/Scenes/Main-blue.unity
+    guid: 14e2a396bb1faf54d860559c77d56fbf
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 378ed259cbddd2943846a04d5e516fd5
   - enabled: 1

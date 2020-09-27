@@ -5,6 +5,7 @@ using UnityEngine;
 public class doorController : MonoBehaviour
 {
     public List<GameObject> monsterInRoomControll;
+    public bool bossDead;
 
     public bool playerInRoom = false;
     public bool doorsOpen = false;
@@ -23,6 +24,7 @@ public class doorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bossDead = false; 
         foreach (GameObject door in doors)
         {
             door.SetActive(false);
@@ -71,18 +73,6 @@ public class doorController : MonoBehaviour
     
     IEnumerator colorFlower(GameObject flower)
     {
-        /*flower.GetComponent<Renderer>().material = dissolveMatFlower;
-        for (float z = -0.51f; z < 1f; z += 0.1f)
-        {
-            yield return new WaitForSeconds(0.04f);
-            dissolveMatFlower.SetFloat("StartTime", z);
-        }
-        for (float z = 1f; z > -0.51f; z -= 0.1f)
-        {
-            yield return new WaitForSeconds(0.04f);
-            dissolveMatFlower.SetFloat("StartTime", z);
-        }*/
-
         yield return new WaitForSeconds(0.5f);
         int r = Random.Range(0, 2);
         if (r == 0)
